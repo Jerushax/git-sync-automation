@@ -1,0 +1,24 @@
+stages:
+  - test
+  - deploy
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+
+before_script:
+  - python --version
+  - pip install -r requirements.txt
+
+unit_tests:
+  stage: test
+  script:
+    - pytest
+
+run_sync_service:
+  stage: deploy
+  script:
+    - uvicorn src.main:app --host 0.0.0.0 --port ${PORT:-8000}

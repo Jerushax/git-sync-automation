@@ -1,0 +1,31 @@
+app:
+  host: 0.0.0.0
+  port: 8000
+
+source_repo:
+  name: repo-a
+  url: ${SOURCE_REPO_URL} #replace with actual URL
+  branch: main
+
+target_repo:
+  name: repo-b
+  url: ${TARGET_REPO_URL} #replace with actual URL
+  branch: main
+
+sync:
+  working_dir: repos
+  sync_branch_prefix: sync
+  excluded_paths:
+    - .git/
+    - node_modules/
+    - __pycache__/
+    - docs/
+
+merge_request:
+  target_branch: main
+  title_prefix: "Auto Sync"
+
+logging:
+  file: logs/app.log
+  max_bytes: 10485760
+  backup_count: 5

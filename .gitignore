@@ -1,0 +1,45 @@
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+logs/*.log
+repos/
+.pytest_cache/
+.idea/
+.vscode/
+# Secrets
+.env
+.env.local
+*.env
+secrets.*
+config.json
+credentials.json
+
+# Keys & certificates
+*.pem
+*.key
+*.crt
+*.pfx
+
+# Database
+*.db
+*.sqlite3
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Python virtual envs
+venv/
+.venv/
+
+# Build output
+dist/
+build/
+
+# Local configs
+*.local
