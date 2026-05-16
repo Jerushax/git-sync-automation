@@ -736,6 +736,53 @@ ngrok http 8000
 ```
 
 ---
+# Running with Docker
+
+## Build Docker Image
+
+```bash
+docker build -t git-sync-automation .
+```
+
+---
+
+## Run Docker Container
+
+```bash
+docker run -p 8000:8000 git-sync-automation
+```
+
+Application will run on:
+
+```text
+http://localhost:8000
+```
+
+---
+
+# Docker Compose
+
+## Start Containers
+
+```bash
+docker-compose up --build
+```
+
+## Stop Containers
+
+```bash
+docker-compose down
+```
+
+---
+
+## Notes
+
+Before running Docker:
+
+- Ensure `.env` file exists
+- Ensure `config/config.yaml` is configured properly
+- Docker Desktop should be running
 
 # Future Improvements
 
